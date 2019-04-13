@@ -1,0 +1,24 @@
+version: '3.1'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: task_mysql
+    environment:
+      - MYSQL_USER=Andrey
+      - MYSQL_PASSWORD=123
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - 3306:3306
+    volumes:
+      - /mysql:/var/lib/mysql/
+
+
+  graph:
+    image: neo4j:3.5.4
+    container_name: task_neo4j
+    ports:
+      - 7474:7474
+      - 7687:7687
+    volumes:
+      - /neoj4/data:/data/
