@@ -20,5 +20,7 @@ services:
     ports:
       - 7474:7474
       - 7687:7687
+    extra_hosts:
+      - "neo.loc:10.0.0.1"
     volumes:
       - /neoj4/data:/data/
