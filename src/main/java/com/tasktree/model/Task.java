@@ -14,7 +14,9 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private Long userId;
+    @ManyToOne
+    @JoinColumn
+    private User user;
 
     private String title;
 

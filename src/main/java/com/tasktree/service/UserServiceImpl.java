@@ -5,8 +5,6 @@ import com.tasktree.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 @AllArgsConstructor
 public class UserServiceImpl implements UserService {
@@ -15,8 +13,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User create(String name) {
-        User user = new User();
-        user.setName(name);
+        User user = new User(name);
 
         return repository.save(user);
     }

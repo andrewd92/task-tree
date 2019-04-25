@@ -15,7 +15,7 @@ public class User {
     private Long id;
 
     @Column(unique = true)
-    private String name;
+    private final String name;
 
     @CreationTimestamp
     @Column(name = "create_date")

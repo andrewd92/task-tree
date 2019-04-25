@@ -13,8 +13,7 @@ public class UserController {
     private final UserService service;
 
     @RequestMapping("/user/create/{name}")
-    User create(@PathVariable String name) {
-
+    public User create(@PathVariable String name) {
         return service.create(name);
     }
 }
