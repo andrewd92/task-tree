@@ -1,7 +1,7 @@
 package com.tasktree.service;
 
-import com.tasktree.model.Task;
-import com.tasktree.repository.TaskRepository;
+import com.tasktree.model.TaskGraph;
+import com.tasktree.repository.TaskGraphRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -11,11 +11,11 @@ import java.util.Optional;
 @Service
 @AllArgsConstructor
 public class TaskServiceImpl implements TaskService {
-    private TaskRepository taskRepository;
+    private TaskGraphRepository taskRepository;
 
     @Override
-    public Task createByTitle(String title) {
-        Task task = new Task();
+    public TaskGraph createByTitle(String title) {
+        TaskGraph task = new TaskGraph();
         task.setTitle(title);
         task.setDate(new Date());
         task.setDone(false);
@@ -23,7 +23,7 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public Optional<Task> getById(Long Id) {
+    public Optional<TaskGraph> getById(Long Id) {
         return taskRepository.findById(Id);
     }
 }

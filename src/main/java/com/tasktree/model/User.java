@@ -9,20 +9,13 @@ import java.util.Date;
 
 @Entity
 @Data
-public class Task {
+public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     private Long id;
 
-    private Long userId;
-
-    private String title;
-
-    private boolean done = false;
-
-    private Date dateStart;
-
-    private Date dateEnd;
+    @Column(unique = true)
+    private String name;
 
     @CreationTimestamp
     @Column(name = "create_date")
