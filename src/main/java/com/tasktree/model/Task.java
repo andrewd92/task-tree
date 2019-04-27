@@ -18,13 +18,17 @@ public class Task {
     @JoinColumn
     private User user;
 
-    private String title;
+    private final String title;
 
     private boolean done = false;
 
     private Date dateStart;
 
     private Date dateEnd;
+
+    @ManyToOne
+    @JoinColumn
+    private Task parent;
 
     @CreationTimestamp
     @Column(name = "create_date")

@@ -18,12 +18,25 @@ public class TaskGraph {
 
     private Long taskId;
 
+    private User user;
+
     private String title;
 
-    private boolean done = false;
+    private boolean done;
 
-    private Date date;
+    private Date dateStart;
+
+    private Date dateEnd;
 
     @Relationship(type = "HAS")
     public Set<TaskGraph> children;
+
+    public TaskGraph(Task task) {
+        taskId = task.getId();
+        user = task.getUser();
+        title = task.getTitle();
+        done = task.isDone();
+        dateStart = task.getDateStart();
+        dateEnd = task.getDateEnd();
+    }
 }
